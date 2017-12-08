@@ -1,0 +1,58 @@
+@(Customer: List[models.Customer])
+
+@main("Customer") {
+  
+  <p class="lead">Customer Catalogue</p>
+  
+  <table class="table table-bordered table-hover table-condensed">
+  
+  <h1>WeGiveOurCustomersDetails.com </h1>
+
+  <thead>
+  
+  <!-- The header row-->
+  
+  <tr>
+  
+  <th>ID</th>
+  
+  <th>Name</th>
+  
+  <th>Address</th>
+  
+  <th>Phone</th>
+  
+  </tr>
+  
+  </thead>
+  
+  <tbody>
+  
+  <!-- Cust. row(s) -->
+  @for(c <-Customer){
+  <tr>
+  
+      <td>@c.getId</td>
+      <td>@c.getName</td>
+      <td>@c.getAddress</td>
+      <td>@c.getPhone</td>
+      <td>
+        <a href="@routes.HomeController.deleteCustomer(c.getId)" class="button-xs btn danger" onclick="return confirmDel();">
+          <img class="icon" src="@routes.Assets.versioned("images/bin.png")" alt="trashIcon">          
+        </a>
+      </td>
+  </tr>
+
+  }
+  
+  </tbody>
+  
+  </table>
+
+  <a href="@routes.HomeController.addCustomer()">
+      <button type="button" class="btn btn-primary">Add a Customer</button>
+  </a>
+  
+<br>
+<br>
+  }

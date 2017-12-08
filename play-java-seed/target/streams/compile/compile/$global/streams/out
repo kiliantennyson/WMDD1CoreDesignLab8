@@ -1,0 +1,2 @@
+[0m[[0m[33mwarn[0m] [0m[0m/home/wdd/webapps/WMDD1CoreDesignLab /play-java-seed/app/controllers/HomeController.java:13:1: com.sun.corba.se.spi.activation._ActivatorImplBase is internal proprietary API and may be removed in a future release[0m
+[0m[[0m[33mwarn[0m] [0m[0mimport com.sun.corba.se.spi.activation._ActivatorImplBase;[0m
