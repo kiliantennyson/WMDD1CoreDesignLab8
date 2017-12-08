@@ -37,11 +37,17 @@
       <td>@p.getStock</td>
       <td id="priceColumn">&euro; @("%.2f".format(p.getPrice))</td>
       <td>
+        <a href="@routes.HomeController.updateProduct(p.getId)" class="button-xs btn danger">
+          <img class="icon" src="@routes.Assets.versioned("images/edit.png")" alt="editIcon">          
+        </a>
+      </td>
+      
+      <td>
         <a href="@routes.HomeController.deleteProduct(p.getId)" class="button-xs btn danger" onclick="return confirmDel();">
           <img class="icon" src="@routes.Assets.versioned("images/bin.png")" alt="trashIcon">          
         </a>
       </td>
-  </tr>
+    </tr>
 
   }
   

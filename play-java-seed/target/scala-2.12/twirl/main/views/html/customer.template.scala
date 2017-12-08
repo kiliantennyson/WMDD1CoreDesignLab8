@@ -69,19 +69,24 @@ Seq[Any](format.raw/*1.35*/("""
       <td>"""),_display_(/*37.12*/c/*37.13*/.getAddress),format.raw/*37.24*/("""</td>
       <td>"""),_display_(/*38.12*/c/*38.13*/.getPhone),format.raw/*38.22*/("""</td>
       <td>
-        <a href=""""),_display_(/*40.19*/routes/*40.25*/.HomeController.deleteCustomer(c.getId)),format.raw/*40.64*/("""" class="button-xs btn danger" onclick="return confirmDel();">
-          <img class="icon" src=""""),_display_(/*41.35*/routes/*41.41*/.Assets.versioned("images/bin.png")),format.raw/*41.76*/("""" alt="trashIcon">          
+        <a href=""""),_display_(/*40.19*/routes/*40.25*/.HomeController.updateCustomer(c.getId)),format.raw/*40.64*/("""" class="button-xs btn danger">
+          <img class="icon" src=""""),_display_(/*41.35*/routes/*41.41*/.Assets.versioned("images/edit.png")),format.raw/*41.77*/("""" alt="editIcon">          
+        </a>
+      </td>
+      <td>
+        <a href=""""),_display_(/*45.19*/routes/*45.25*/.HomeController.deleteCustomer(c.getId)),format.raw/*45.64*/("""" class="button-xs btn danger" onclick="return confirmDel();">
+          <img class="icon" src=""""),_display_(/*46.35*/routes/*46.41*/.Assets.versioned("images/bin.png")),format.raw/*46.76*/("""" alt="trashIcon">          
         </a>
       </td>
   </tr>
 
-  """)))}),format.raw/*46.4*/("""
+  """)))}),format.raw/*51.4*/("""
   
-  """),format.raw/*48.3*/("""</tbody>
+  """),format.raw/*53.3*/("""</tbody>
   
   </table>
 
-  <a href=""""),_display_(/*52.13*/routes/*52.19*/.HomeController.addCustomer()),format.raw/*52.48*/("""">
+  <a href=""""),_display_(/*57.13*/routes/*57.19*/.HomeController.addCustomer()),format.raw/*57.48*/("""">
       <button type="button" class="btn btn-primary">Add a Customer</button>
   </a>
   
@@ -103,11 +108,11 @@ Seq[Any](format.raw/*1.35*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Fri Dec 08 12:41:33 GMT 2017
+                  DATE: Fri Dec 08 15:56:48 GMT 2017
                   SOURCE: /home/wdd/webapps/WMDD1CoreDesignLab /play-java-seed/app/views/customer.scala.html
-                  HASH: d23ea0480ccdeaa8f8529a7ebe83ce86d3411cb8
-                  MATRIX: 966->1|1094->34|1122->37|1146->53|1185->55|1217->61|1592->410|1625->427|1664->428|1694->431|1740->450|1750->451|1777->457|1821->474|1831->475|1860->483|1904->500|1914->501|1946->512|1990->529|2000->530|2030->539|2092->574|2107->580|2167->619|2291->716|2306->722|2362->757|2458->823|2491->829|2554->865|2569->871|2619->900
-                  LINES: 28->1|33->1|35->3|35->3|35->3|37->5|64->32|64->32|64->32|65->33|67->35|67->35|67->35|68->36|68->36|68->36|69->37|69->37|69->37|70->38|70->38|70->38|72->40|72->40|72->40|73->41|73->41|73->41|78->46|80->48|84->52|84->52|84->52
+                  HASH: 231c3efbf71aaf5b33c9b8ff22ba00a5854fb518
+                  MATRIX: 966->1|1094->34|1122->37|1146->53|1185->55|1217->61|1592->410|1625->427|1664->428|1694->431|1740->450|1750->451|1777->457|1821->474|1831->475|1860->483|1904->500|1914->501|1946->512|1990->529|2000->530|2030->539|2092->574|2107->580|2167->619|2260->685|2275->691|2332->727|2441->809|2456->815|2516->854|2640->951|2655->957|2711->992|2807->1058|2840->1064|2903->1100|2918->1106|2968->1135
+                  LINES: 28->1|33->1|35->3|35->3|35->3|37->5|64->32|64->32|64->32|65->33|67->35|67->35|67->35|68->36|68->36|68->36|69->37|69->37|69->37|70->38|70->38|70->38|72->40|72->40|72->40|73->41|73->41|73->41|77->45|77->45|77->45|78->46|78->46|78->46|83->51|85->53|89->57|89->57|89->57
                   -- GENERATED --
               */
           

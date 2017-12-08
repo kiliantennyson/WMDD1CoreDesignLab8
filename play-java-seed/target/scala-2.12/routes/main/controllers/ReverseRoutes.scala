@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wdd/webapps/WMDD1CoreDesignLab /play-java-seed/conf/routes
-// @DATE:Fri Dec 08 12:41:33 GMT 2017
+// @DATE:Fri Dec 08 15:56:05 GMT 2017
 
 import play.api.mvc.Call
 
@@ -19,7 +19,7 @@ package controllers {
     }
 
   
-    // @LINE:14
+    // @LINE:16
     def addProductSubmit(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "addProductSubmit")
@@ -31,7 +31,7 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "addcustomer")
     }
   
-    // @LINE:15
+    // @LINE:17
     def addCustomerSubmit(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "addCustomerSubmit")
@@ -43,10 +43,22 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "delProduct/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("id", id)))
     }
   
+    // @LINE:12
+    def updateProduct(id:Long): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "updateProduct/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("id", id)))
+    }
+  
     // @LINE:11
     def deleteCustomer(id:Long): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "delCustomer/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("id", id)))
+    }
+  
+    // @LINE:13
+    def updateCustomer(id:Long): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "updateCustomer/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("id", id)))
     }
   
     // @LINE:8
@@ -69,14 +81,14 @@ package controllers {
   
   }
 
-  // @LINE:18
+  // @LINE:20
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:18
+    // @LINE:20
     def versioned(file:Asset): Call = {
       implicit lazy val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public"))); _rrc
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[Asset]].unbind("file", file))
