@@ -17,6 +17,9 @@ private Long id;
 @Constraints.Required
 private String name;
 
+@ManyToOne
+private Category category;
+
 @Constraints.Required
 private String description;
 
@@ -34,7 +37,7 @@ public Product() {
 
 // Constructor to initialise object
 
-public Product(Long id, String name, String description, int stock, double price) {
+public Product(Long id, String name, String description, int stock, double price, Category category) {
 
 this.id = id;
 
@@ -46,11 +49,13 @@ this.stock = stock;
 
 this.price = price;
 
+this.category = category;
+
 }
 
 public static final Finder<Long, Product> find = new Finder<>(Product.class);
 
-public static final List<Product> finalAll(){
+public static final List<Product> findAll(){
     return Product.find.all();
 }
 // Accessor methods
@@ -103,7 +108,13 @@ public void setPrice(double price){
     this.price = price;
 }
 
+public Category getCategory(){
+    return category;
+}
 
+public void setCategory(Category category){
+    this.category = category;
+}
 
 
 }

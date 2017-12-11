@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/wdd/webapps/WMDD1CoreDesignLab /play-java-seed/conf/routes
-// @DATE:Fri Dec 08 15:56:05 GMT 2017
+// @SOURCE:/home/wdd/webapps/WMDD1CoreDesignLab  (copy 1)/play-java-seed/conf/routes
+// @DATE:Mon Dec 11 20:05:45 GMT 2017
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -80,6 +80,16 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:6
+    def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.index",
+      """
+        function(cat0) {
+          return _wA({method:"GET", url:"""" + _prefix + """" + _qS([(cat0 == null ? null : (""" + implicitly[play.api.mvc.QueryStringBindable[Long]].javascriptUnbind + """)("cat", cat0))])})
+        }
+      """
+    )
+  
     // @LINE:13
     def updateCustomer: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.updateCustomer",
@@ -96,16 +106,6 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "addproduct"})
-        }
-      """
-    )
-  
-    // @LINE:6
-    def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.index",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + """"})
         }
       """
     )

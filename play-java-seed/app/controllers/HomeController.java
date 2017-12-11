@@ -28,11 +28,21 @@ public class HomeController extends Controller {
         this.formFactory = f;
     }
 
-    public Result index() {
+    public Result index(Long cat) {
 
-        List<Product> productList = Product.finalAll();
+        List<Product> productList = null;      
 
-        return ok(index.render(productList));
+        List<Category> categoryList = Category.findAll();
+
+        if (cat == 0){
+            productList = Product.findAll();
+        }
+        else
+        {
+            productList = Category.find.ref(cat).getProducts();
+        }
+
+        return ok(index.render(productList, categoryList));
     }
 
     public Result customer() {
@@ -73,7 +83,7 @@ public class HomeController extends Controller {
 
            
 
-           return redirect(controllers.routes.HomeController.index());
+           return redirect(controllers.routes.HomeController.index(0));
        }
     }
 
@@ -117,7 +127,7 @@ public class HomeController extends Controller {
 
         flash("success", "Product has been deleted");
 
-        return redirect(routes.HomeController.index());
+        return redirect(routes.HomeController.index(0));
     }
 
     public Result deleteCustomer(Long id){

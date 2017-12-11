@@ -1,2 +1,4 @@
-[0m[[0m[33mwarn[0m] [0m[0m/home/wdd/webapps/WMDD1CoreDesignLab /play-java-seed/app/controllers/HomeController.java:13:1: com.sun.corba.se.spi.activation._ActivatorImplBase is internal proprietary API and may be removed in a future release[0m
-[0m[[0m[33mwarn[0m] [0m[0mimport com.sun.corba.se.spi.activation._ActivatorImplBase;[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/webapps/WMDD1CoreDesignLab  (copy 1)/play-java-seed/app/models/Category.java:66:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   method getID()[0m
+[0m[[0m[31merror[0m] [0m[0m  location: variable c of type models.Category[0m
+[0m[[0m[31merror[0m] [0m[0m            options.put(c.getID().toString(), c.getName());[0m

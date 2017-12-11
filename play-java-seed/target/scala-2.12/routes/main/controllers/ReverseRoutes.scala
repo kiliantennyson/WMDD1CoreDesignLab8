@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/wdd/webapps/WMDD1CoreDesignLab /play-java-seed/conf/routes
-// @DATE:Fri Dec 08 15:56:05 GMT 2017
+// @SOURCE:/home/wdd/webapps/WMDD1CoreDesignLab  (copy 1)/play-java-seed/conf/routes
+// @DATE:Mon Dec 11 20:05:45 GMT 2017
 
 import play.api.mvc.Call
 
@@ -55,6 +55,12 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "delCustomer/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("id", id)))
     }
   
+    // @LINE:6
+    def index(cat:Long = 0L): Call = {
+      
+      Call("GET", _prefix + play.core.routing.queryString(List(if(cat == 0L) None else Some(implicitly[play.api.mvc.QueryStringBindable[Long]].unbind("cat", cat)))))
+    }
+  
     // @LINE:13
     def updateCustomer(id:Long): Call = {
       
@@ -65,12 +71,6 @@ package controllers {
     def addProduct(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "addproduct")
-    }
-  
-    // @LINE:6
-    def index(): Call = {
-      
-      Call("GET", _prefix)
     }
   
     // @LINE:7

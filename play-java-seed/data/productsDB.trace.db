@@ -7,3 +7,7 @@ select * from products [42102-193]
 2017-12-07 16:10:05 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLException: Table "CUSTOMER" not found; SQL statement:
 select * from customer [42102-193]
+2017-12-11 21:05:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PLAY" not found; SQL statement:
+SELECT * FROM 
+PLAY CATEGORY [42102-193]

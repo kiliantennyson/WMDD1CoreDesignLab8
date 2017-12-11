@@ -128,8 +128,8 @@ Copyright <strong>Online Shop</strong>
 
               /*
                   -- GENERATED --
-                  DATE: Fri Dec 08 12:36:57 GMT 2017
-                  SOURCE: /home/wdd/webapps/WMDD1CoreDesignLab /play-java-seed/app/views/main.scala.html
+                  DATE: Mon Dec 11 19:23:53 GMT 2017
+                  SOURCE: /home/wdd/webapps/WMDD1CoreDesignLab  (copy 1)/play-java-seed/app/views/main.scala.html
                   HASH: 1fe7d93d0f1c62edc62754dd3a21cae2c2c11ebf
                   MATRIX: 952->1|1077->31|1105->33|1221->122|1247->127|1446->299|1461->305|1523->346|1585->381|1600->387|1665->431|2175->915|2202->922|2231->924|2432->1098|2447->1104|2508->1144
                   LINES: 28->1|33->1|35->3|43->11|43->11|49->17|49->17|49->17|50->18|50->18|50->18|89->57|89->57|91->59|110->78|110->78|110->78

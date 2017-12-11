@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/wdd/webapps/WMDD1CoreDesignLab /play-java-seed/conf/routes
-// @DATE:Fri Dec 08 15:56:05 GMT 2017
+// @SOURCE:/home/wdd/webapps/WMDD1CoreDesignLab  (copy 1)/play-java-seed/conf/routes
+// @DATE:Mon Dec 11 20:05:45 GMT 2017
 
 
 package router {

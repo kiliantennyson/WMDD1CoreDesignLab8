@@ -3,7 +3,7 @@
 # ~~~~
 
 # An example controller showing a sample home page
-GET     /                           controllers.HomeController.index
+GET     /                           controllers.HomeController.index(cat:Long?=0L)
 GET     /customer                   controllers.HomeController.customer
 GET     /addproduct                 controllers.HomeController.addProduct
 GET     /addcustomer                controllers.HomeController.addCustomer
