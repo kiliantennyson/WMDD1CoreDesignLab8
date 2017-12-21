@@ -1,4 +1,4 @@
-@(title: String)(content: Html)
+@(title: String, user: models.users.User)(content: Html)
 
 <!DOCTYPE html>
 
@@ -34,13 +34,22 @@
 
 <ul class="nav navbar-nav">
 
-<li class="active"><a href="/">Products</a></li>
+<li @if(title=="Products Page"){class="active"}><a href="@routes.HomeController.index()">Products</a></li>
 
-<li class="active"><a href="/customer">Customers</a></li>
+<li @if(title=="Customer"){class="active"}class="active"><a href="/customer">Customers</a></li>
 
 <li><a href="#">Services</a></li>
 
 <li><a href="#">Contact</a></li>
+
+<li @if(title=="Login"){class="active"}>
+  @if(user != null){
+    <a href="@routes.LoginController.logout()">Logout @user.getName() </a>
+  } else {
+    <a href="@routes.LoginController.login()">Login </a>    
+  }
+</li>
+
 
 </ul>
 

@@ -22,20 +22,20 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object addCustomer extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[Form[models.Customer],play.twirl.api.HtmlFormat.Appendable] {
+object addCustomer extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[Form[models.Customer],models.users.User,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(customerForm: Form[models.Customer]):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(customerForm: Form[models.Customer], user: models.users.User):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 /*3.2*/import helper._
 
 
-Seq[Any](format.raw/*1.39*/("""
+Seq[Any](format.raw/*1.64*/("""
 
 """),format.raw/*4.1*/("""
 
-"""),_display_(/*6.2*/main("Add Customer")/*6.22*/{_display_(Seq[Any](format.raw/*6.23*/("""
+"""),_display_(/*6.2*/main("Add Customer", user)/*6.28*/{_display_(Seq[Any](format.raw/*6.29*/("""
     """),format.raw/*7.5*/("""<p class="lead">Add a new Customer</p>
 
 
@@ -68,9 +68,9 @@ Seq[Any](format.raw/*1.39*/("""
     }
   }
 
-  def render(customerForm:Form[models.Customer]): play.twirl.api.HtmlFormat.Appendable = apply(customerForm)
+  def render(customerForm:Form[models.Customer],user:models.users.User): play.twirl.api.HtmlFormat.Appendable = apply(customerForm,user)
 
-  def f:((Form[models.Customer]) => play.twirl.api.HtmlFormat.Appendable) = (customerForm) => apply(customerForm)
+  def f:((Form[models.Customer],models.users.User) => play.twirl.api.HtmlFormat.Appendable) = (customerForm,user) => apply(customerForm,user)
 
   def ref: this.type = this
 
@@ -79,10 +79,10 @@ Seq[Any](format.raw/*1.39*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Dec 11 20:07:10 GMT 2017
+                  DATE: Thu Dec 21 23:02:53 GMT 2017
                   SOURCE: /home/wdd/webapps/WMDD1CoreDesignLab  (copy 1)/play-java-seed/app/views/addCustomer.scala.html
-                  HASH: 36613c74b77e6a60a2571d2c16bbd194edf43e53
-                  MATRIX: 969->1|1079->41|1124->38|1152->57|1180->60|1208->80|1246->81|1277->86|1346->129|1387->161|1426->162|1458->167|1527->209|1541->214|1577->229|1613->238|1651->246|1680->249|1789->348|1829->349|1857->351|1869->355|1900->365|1929->368|2026->444|2054->446|2157->528|2185->530|2284->608|2313->611|2399->676|2428->678|2570->793|2585->799|2630->823|2750->913|2782->915
+                  HASH: 50098c707bfe50dcae265e24e3789d90f7f23096
+                  MATRIX: 987->1|1122->66|1167->63|1195->82|1223->85|1257->111|1295->112|1326->117|1395->160|1436->192|1475->193|1507->198|1576->240|1590->245|1626->260|1662->269|1700->277|1729->280|1838->379|1878->380|1906->382|1918->386|1949->396|1978->399|2075->475|2103->477|2206->559|2234->561|2333->639|2362->642|2448->707|2477->709|2619->824|2634->830|2679->854|2799->944|2831->946
                   LINES: 28->1|31->3|34->1|36->4|38->6|38->6|38->6|39->7|43->11|43->11|43->11|44->12|45->13|45->13|45->13|46->14|47->15|49->17|49->17|49->17|50->18|50->18|50->18|52->20|52->20|53->21|53->21|54->22|54->22|56->24|56->24|58->26|60->28|60->28|60->28|64->32|65->33
                   -- GENERATED --
               */

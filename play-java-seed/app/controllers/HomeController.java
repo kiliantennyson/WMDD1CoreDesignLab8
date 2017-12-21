@@ -14,6 +14,7 @@ import com.sun.corba.se.spi.activation._ActivatorImplBase;
 
 import models.*;
 import views.html.*;
+import models.users.*;
 
 /**
  * This controller contains an action to handle HTTP requests
@@ -42,21 +43,21 @@ public class HomeController extends Controller {
             productList = Category.find.ref(cat).getProducts();
         }
 
-        return ok(index.render(productList, categoryList));
+        return ok(index.render(productList, categoryList, User.getUserById(session().get("email"))));
     }
 
     public Result customer() {
         
        List<Customer> customerList = Customer.finalAll();
         
-       return ok(customer.render(customerList));
+       return ok(customer.render(customerList, User.getUserById(session().get("email"))));
     }
 
     public Result addProduct(){
 
         Form<Product> productForm = formFactory.form(Product.class);
 
-        return ok(addProduct.render(productForm));
+        return ok(addProduct.render(productForm, User.getUserById(session().get("email"))));
     }
 
     
@@ -65,7 +66,7 @@ public class HomeController extends Controller {
        Form<Product> newProductForm = formFactory.form(Product.class).bindFromRequest(); 
 
        if(newProductForm.hasErrors()){
-           return badRequest(addProduct.render(newProductForm));    
+           return badRequest(addProduct.render(newProductForm, User.getUserById(session().get("email"))));    
        }
        else
        {
@@ -91,7 +92,7 @@ public class HomeController extends Controller {
         
                 Form<Customer> customerForm = formFactory.form(Customer.class);
         
-                return ok(addCustomer.render(customerForm));
+                return ok(addCustomer.render(customerForm, User.getUserById(session().get("email"))));
             }
     
     public Result addCustomerSubmit() {
@@ -101,7 +102,7 @@ public class HomeController extends Controller {
 
        if(newCustomerForm.hasErrors()){
 
-        return badRequest(addCustomer.render(newCustomerForm));    
+        return badRequest(addCustomer.render(newCustomerForm, User.getUserById(session().get("email"))));    
              }
               else
             {
@@ -121,6 +122,9 @@ public class HomeController extends Controller {
        }
     }
     
+    @Security.Authenticated(Secured.class)
+    @With(AuthAdmin.class)
+    @Transactional
     public Result deleteProduct(Long id){
 
         Product.find.ref(id).delete();
@@ -152,7 +156,7 @@ public class HomeController extends Controller {
             return badRequest("error");
         }
 
-        return ok(addProduct.render(productForm));
+        return ok(addProduct.render(productForm, User.getUserById(session().get("email"))));
 
     }
 
@@ -169,7 +173,8 @@ public class HomeController extends Controller {
             return badRequest("error");
         }
 
-        return ok(addCustomer.render(customerForm));
+        return ok(addCustomer.render(customerForm, User.getUserById(session().get("email"))));
 
     }
+
 }

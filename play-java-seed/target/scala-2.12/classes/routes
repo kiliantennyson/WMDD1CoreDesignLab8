@@ -11,7 +11,9 @@ GET     /delProduct/:id             controllers.HomeController.deleteProduct(id:
 GET     /delCustomer/:id            controllers.HomeController.deleteCustomer(id: Long)
 GET     /updateProduct/:id          controllers.HomeController.updateProduct(id: Long)
 GET     /updateCustomer/:id         controllers.HomeController.updateCustomer(id: Long)
-
+GET     /login                      controllers.LoginController.login
+POST    /loginSubmit                controllers.LoginController.loginSubmit
+GET     /logout                     controllers.LoginController.logout
 
 POST /addProductSubmit              controllers.HomeController.addProductSubmit
 POST /addCustomerSubmit              controllers.HomeController.addCustomerSubmit

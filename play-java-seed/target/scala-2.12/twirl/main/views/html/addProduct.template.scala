@@ -22,19 +22,19 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object addProduct extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[Form[models.Product],play.twirl.api.HtmlFormat.Appendable] {
+object addProduct extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[Form[models.Product],models.users.User,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(productForm: Form[models.Product]):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(productForm: Form[models.Product], user: models.users.User):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 /*3.2*/import helper._
 
 
-Seq[Any](format.raw/*1.37*/("""
+Seq[Any](format.raw/*1.62*/("""
 
 """),format.raw/*4.1*/("""
-"""),_display_(/*5.2*/main("Add Product")/*5.21*/{_display_(Seq[Any](format.raw/*5.22*/("""
+"""),_display_(/*5.2*/main("Add Product", user)/*5.27*/{_display_(Seq[Any](format.raw/*5.28*/("""
     """),format.raw/*6.5*/("""<p class="lead">Add a new product.</p>
 
     """),_display_(/*8.6*/if(flash.containsKey("success"))/*8.38*/{_display_(Seq[Any](format.raw/*8.39*/("""
@@ -75,9 +75,9 @@ Seq[Any](format.raw/*1.37*/("""
     }
   }
 
-  def render(productForm:Form[models.Product]): play.twirl.api.HtmlFormat.Appendable = apply(productForm)
+  def render(productForm:Form[models.Product],user:models.users.User): play.twirl.api.HtmlFormat.Appendable = apply(productForm,user)
 
-  def f:((Form[models.Product]) => play.twirl.api.HtmlFormat.Appendable) = (productForm) => apply(productForm)
+  def f:((Form[models.Product],models.users.User) => play.twirl.api.HtmlFormat.Appendable) = (productForm,user) => apply(productForm,user)
 
   def ref: this.type = this
 
@@ -86,10 +86,10 @@ Seq[Any](format.raw/*1.37*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Dec 11 21:00:31 GMT 2017
+                  DATE: Thu Dec 21 22:41:44 GMT 2017
                   SOURCE: /home/wdd/webapps/WMDD1CoreDesignLab  (copy 1)/play-java-seed/app/views/addProduct.scala.html
-                  HASH: 66ac33adbab604bfc63d3e619ebbaf6579dfa480
-                  MATRIX: 967->1|1075->39|1120->36|1148->55|1175->57|1202->76|1240->77|1271->82|1341->127|1381->159|1419->160|1454->169|1527->215|1541->220|1577->235|1618->248|1660->260|1693->267|1801->365|1841->366|1873->372|1886->376|1917->386|1950->393|2046->468|2078->474|2188->563|2225->574|2461->790|2503->806|2601->883|2633->889|2731->966|2768->977|2853->1041|2890->1051|3039->1173|3054->1179|3099->1203|3231->1305
+                  HASH: 67ad6c9455d6af1eab6a83b799e07f2e96edab4b
+                  MATRIX: 985->1|1118->64|1163->61|1191->80|1218->82|1251->107|1289->108|1320->113|1390->158|1430->190|1468->191|1503->200|1576->246|1590->251|1626->266|1667->279|1709->291|1742->298|1850->396|1890->397|1922->403|1935->407|1966->417|1999->424|2095->499|2127->505|2237->594|2274->605|2510->821|2552->837|2650->914|2682->920|2780->997|2817->1008|2902->1072|2939->1082|3088->1204|3103->1210|3148->1234|3280->1336
                   LINES: 28->1|31->3|34->1|36->4|37->5|37->5|37->5|38->6|40->8|40->8|40->8|41->9|42->10|42->10|42->10|43->11|44->12|46->14|46->14|46->14|47->15|47->15|47->15|49->17|49->17|50->18|50->18|52->20|57->25|60->28|60->28|61->29|61->29|63->31|63->31|65->33|67->35|67->35|67->35|71->39
                   -- GENERATED --
               */

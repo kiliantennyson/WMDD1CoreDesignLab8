@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wdd/webapps/WMDD1CoreDesignLab  (copy 1)/play-java-seed/conf/routes
-// @DATE:Mon Dec 11 20:05:45 GMT 2017
+// @DATE:Thu Dec 21 22:39:20 GMT 2017
 
 import play.api.mvc.Call
 
@@ -19,7 +19,7 @@ package controllers {
     }
 
   
-    // @LINE:16
+    // @LINE:18
     def addProductSubmit(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "addProductSubmit")
@@ -31,7 +31,7 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "addcustomer")
     }
   
-    // @LINE:17
+    // @LINE:19
     def addCustomerSubmit(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "addCustomerSubmit")
@@ -81,14 +81,41 @@ package controllers {
   
   }
 
-  // @LINE:20
+  // @LINE:14
+  class ReverseLoginController(_prefix: => String) {
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:15
+    def loginSubmit(): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "loginSubmit")
+    }
+  
+    // @LINE:16
+    def logout(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "logout")
+    }
+  
+    // @LINE:14
+    def login(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "login")
+    }
+  
+  }
+
+  // @LINE:22
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:20
+    // @LINE:22
     def versioned(file:Asset): Call = {
       implicit lazy val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public"))); _rrc
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[Asset]].unbind("file", file))
